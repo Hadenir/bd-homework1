@@ -1,0 +1,21 @@
+﻿<Window x:Class="AviationDb.ConnectDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviationDb"
+        mc:Ignorable="d"
+        Title="Connect to database" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,25,25,25">
+        <Label Content="IP Address:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Left" Margin="73,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Text="localhost" TabIndex="1"/>
+        <Label Content="Port:" HorizontalAlignment="Left" Margin="246,0,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PortTextBox" Margin="285,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="79" Text="1433" TabIndex="2"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="0,52,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Margin="73,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Text="sa" TabIndex="3"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="73,56,0,0" VerticalAlignment="Top" Width="291" TabIndex="4"/>
+        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Center" Margin="0,83,0,0" Width="364" VerticalAlignment="Top" Height="25" Click="ConnectButton_Click" IsDefault="True" TabIndex="5"/>
+
+    </Grid>
+</Window>

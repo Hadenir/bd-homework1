@@ -1,0 +1,36 @@
+﻿<Window x:Class="AviationDb.FlightDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviationDb"
+        xmlns:database="clr-namespace:AviationDb.Database"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Create new flight" ResizeMode="NoResize" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"
+        DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+    <Grid Margin="25,25,25,25" Width="350">
+        <ComboBox x:Name="AircraftComboBox" HorizontalAlignment="Right" Margin="0,2,10,0" VerticalAlignment="Top"
+                  Width="284" SelectedValue="{Binding Flight.Aircraft}" TabIndex="1" />
+        <Label Content="Aircraft:" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label Content="Pilot:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,31,0,0" />
+        <ComboBox x:Name="PilotComboBox" HorizontalAlignment="Right" Margin="0,33,10,0" VerticalAlignment="Top"
+                  Width="284" SelectedValue="{Binding Flight.Pilot}" TabIndex="2" />
+        <Label Content="Origin airport:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,60,0,0" />
+        <ComboBox x:Name="OriginComboBox" HorizontalAlignment="Stretch" Margin="0,86,0,0" VerticalAlignment="Top"
+                  Width="330" SelectedValue="{Binding Flight.Origin}" TabIndex="3" />
+        <Label Content="Destination airport:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,113,0,0" />
+        <ComboBox x:Name="DestinationComboBox" HorizontalAlignment="Stretch" Margin="0,139,0,0" VerticalAlignment="Top"
+                  Width="330" SelectedValue="{Binding Flight.Destination}" TabIndex="4" />
+        <Label Content="Departure:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,166,0,0" />
+        <xctk:DateTimePicker x:Name="DepartureTimePicker" HorizontalAlignment="Stretch" Margin="0,192,0,0"
+                             VerticalAlignment="Top" Width="330" Value="{Binding DepartureTime}" TabIndex="5" IsTabStop="True" />
+        <Label Content="Arrival:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,217,0,0" />
+        <xctk:DateTimePicker x:Name="ArrivalTimePicker" HorizontalAlignment="Stretch" Margin="0,243,0,0"
+                             VerticalAlignment="Top" Width="330" Value="{Binding ArrivalTime}" TabIndex="6" IsTabStop="True" />
+        <Button x:Name="CreateButton" Content="Create flight" HorizontalAlignment="Center" Margin="0,284,0,0"
+                VerticalAlignment="Top" Width="330" Click="CreateButton_Click" TabIndex="7" Height="25" />
+
+    </Grid>
+</Window>
